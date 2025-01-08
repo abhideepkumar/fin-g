@@ -1,0 +1,18 @@
+FinG/
+├── .gitignore
+├── package.json
+├── next.config.js
+├── tsconfig.json
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── contexts/
+│   │   └── LanguageContext.tsx
+│   └── ...
+├── public/
+│   └── ...
+└── node_modules/
+
