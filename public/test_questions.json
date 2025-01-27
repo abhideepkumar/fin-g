@@ -1,0 +1,168 @@
+[
+    {
+      "question": "What is a budget?",
+      "options": [
+        "A plan to manage income and expenses",
+        "A type of bank account",
+        "A government policy",
+        "A method for calculating taxes"
+      ],
+      "correct_option": "A plan to manage income and expenses",
+      "level": "Beginner"
+    },
+    {
+      "question": "What is the main purpose of saving money?",
+      "options": [
+        "To protect against emergencies",
+        "To pay taxes",
+        "To avoid spending altogether",
+        "To invest in stocks"
+      ],
+      "correct_option": "To protect against emergencies",
+      "level": "Beginner"
+    },
+    {
+      "question": "Which of these is an example of an essential expense?",
+      "options": [
+        "Buying groceries",
+        "Going to the movies",
+        "Buying luxury items",
+        "A vacation trip"
+      ],
+      "correct_option": "Buying groceries",
+      "level": "Beginner"
+    },
+    {
+      "question": "What is interest in terms of banking?",
+      "options": [
+        "A penalty for not saving money",
+        "Money earned on savings or charged on loans",
+        "A service fee charged by banks",
+        "An amount paid for opening a bank account"
+      ],
+      "correct_option": "Money earned on savings or charged on loans",
+      "level": "Beginner"
+    },
+    {
+      "question": "What does a credit score represent?",
+      "options": [
+        "Your ability to repay loans",
+        "Your annual income",
+        "Your savings in the bank",
+        "Your investment portfolio size"
+      ],
+      "correct_option": "Your ability to repay loans",
+      "level": "Intermediate"
+    },
+    {
+      "question": "What is the main difference between saving and investing?",
+      "options": [
+        "Saving is riskier than investing",
+        "Investing has potential for higher returns, while saving is safer",
+        "Both are the same",
+        "Investing is only for businesses"
+      ],
+      "correct_option": "Investing has potential for higher returns, while saving is safer",
+      "level": "Intermediate"
+    },
+    {
+      "question": "What is the benefit of diversifying investments?",
+      "options": [
+        "Increases risk",
+        "Reduces risk",
+        "Ensures only high returns",
+        "Eliminates the need for savings"
+      ],
+      "correct_option": "Reduces risk",
+      "level": "Intermediate"
+    },
+    {
+      "question": "Which of the following is NOT a type of insurance?",
+      "options": [
+        "Life insurance",
+        "Health insurance",
+        "Savings account",
+        "Travel insurance"
+      ],
+      "correct_option": "Savings account",
+      "level": "Intermediate"
+    },
+    {
+      "question": "If you have ₹10,000 and the interest rate on your savings account is 5% per year, how much will you have after 1 year?",
+      "options": [
+        "₹10,500",
+        "₹15,000",
+        "₹10,050",
+        "₹11,000"
+      ],
+      "correct_option": "₹10,500",
+      "level": "Intermediate"
+    },
+    {
+      "question": "What is an ETF (Exchange Traded Fund)?",
+      "options": [
+        "A type of mutual fund traded on the stock market",
+        "A fixed deposit account",
+        "A type of insurance plan",
+        "A government bond"
+      ],
+      "correct_option": "A type of mutual fund traded on the stock market",
+      "level": "Advanced"
+    },
+    {
+      "question": "Which of the following is an example of a tax-saving investment?",
+      "options": [
+        "Public Provident Fund (PPF)",
+        "Fixed Deposit without lock-in period",
+        "Stock market investments",
+        "Gold jewelry"
+      ],
+      "correct_option": "Public Provident Fund (PPF)",
+      "level": "Advanced"
+    },
+    {
+      "question": "What does the term “compounding” mean in finance?",
+      "options": [
+        "Earning interest on the initial amount only",
+        "Earning interest on both the principal and the accumulated interest",
+        "Fixed growth of savings every year",
+        "Doubling the principal amount periodically"
+      ],
+      "correct_option": "Earning interest on both the principal and the accumulated interest",
+      "level": "Advanced"
+    },
+    {
+      "question": "If a stock's P/E (Price-to-Earnings) ratio is high, what does it indicate?",
+      "options": [
+        "The stock may be overvalued",
+        "The stock is undervalued",
+        "It has nothing to do with valuation",
+        "The stock has high earnings per share"
+      ],
+      "correct_option": "The stock may be overvalued",
+      "level": "Advanced"
+    },
+    {
+      "question": "What is the purpose of hedging in investments?",
+      "options": [
+        "To completely avoid losses",
+        "To reduce potential risks in a portfolio",
+        "To maximize returns",
+        "To invest in high-risk assets"
+      ],
+      "correct_option": "To reduce potential risks in a portfolio",
+      "level": "Advanced"
+    },
+    {
+      "question": "What is the difference between active and passive investing?",
+      "options": [
+        "Active investing involves frequent buying and selling, while passive investing involves long-term strategies like index funds",
+        "Passive investing generates more returns than active investing",
+        "Active investing is for retirement planning, while passive investing is not",
+        "Passive investing requires more time and effort than active investing"
+      ],
+      "correct_option": "Active investing involves frequent buying and selling, while passive investing involves long-term strategies like index funds",
+      "level": "Advanced"
+    }
+  ]
+  

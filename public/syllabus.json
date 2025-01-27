@@ -1,0 +1,236 @@
+{
+  "beginner": {
+    "topics": [
+      {
+        "name": "Introduction to Finance",
+        "subtopics": [
+          {
+            "name": "What is Finance?",
+            "content": ["Definition and Examples of Finance"]
+          },
+          {
+            "name": "Importance of Financial Literacy",
+            "content": ["How Money Impacts Our Daily Lives"]
+          },
+          {
+            "name": "Types of Finance: Personal, Corporate, and Public Finance",
+            "content": [
+              "Personal Finance vs. Corporate Finance",
+              "Simple Financial Terms (e.g., Income, Expense)",
+              "Local Financial Systems"
+            ]
+          },
+          {
+            "name": "Understanding Money and Currency",
+            "content": [
+              "History and Role of Money",
+              "Types of Currencies",
+              "How Currency Works in Local and Global Trade"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Budgeting Basics",
+        "subtopics": [
+          {
+            "name": "What is a Budget?",
+            "content": ["Definition and Purpose of a Budget", "Benefits of Budgeting"]
+          },
+          {
+            "name": "Steps to Create a Budget",
+            "content": [
+              "Identify Income and Expenses",
+              "Calculate Savings Potential",
+              "Tools for Simple Budgeting (Pen and Paper, Mobile Apps)"
+            ]
+          },
+          {
+            "name": "Tracking Expenses and Income",
+            "content": [
+              "Creating a Daily/Weekly Expense Tracker",
+              "Categorizing Expenses (Essential vs. Non-Essential)",
+              "Real-Life Examples"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Saving Money",
+        "subtopics": [
+          {
+            "name": "Importance of Saving",
+            "content": ["Why Saving is Crucial for Financial Security", "Benefits of Saving for Goals and Emergencies"]
+          },
+          {
+            "name": "Setting Savings Goals",
+            "content": ["Short-Term vs. Long-Term Goals", "Realistic Savings Amounts Based on Income"]
+          },
+          {
+            "name": "Tools for Saving",
+            "content": ["Local Bank Savings Accounts", "Automatic Saving Tools (Digital Wallets)"]
+          }
+        ]
+      }
+    ]
+  },
+  "intermediate": {
+    "topics": [
+      {
+        "name": "Understanding Credit",
+        "subtopics": [
+          {
+            "name": "What is Credit?",
+            "content": [
+              "Definition and Everyday Use Cases of Credit (Buying on EMI, Credit Cards)",
+              "Key Financial Terms: Credit Score, Credit History"
+            ]
+          },
+          {
+            "name": "Building Good Credit",
+            "content": ["Steps to Improve Credit Score", "Understanding Interest Rates on Loans and Credit Cards"]
+          },
+          {
+            "name": "Common Credit Pitfalls",
+            "content": ["Avoiding Late Payments", "Risks of Over-Borrowing", "Simple Ways to Track Credit Card Usage"]
+          }
+        ]
+      },
+      {
+        "name": "Banking Basics",
+        "subtopics": [
+          {
+            "name": "Types of Banks and Financial Institutions",
+            "content": ["Local Banking Options: Public vs. Private Banks", "Services Offered by Banks"]
+          },
+          {
+            "name": "How to Open a Bank Account",
+            "content": [
+              "Step-by-Step Guide for Opening Accounts",
+              "Required Documentation (ID, Proof of Address, etc.)"
+            ]
+          },
+          {
+            "name": "Digital Banking Basics",
+            "content": ["How to Use Mobile Banking Apps", "Benefits of Online Transactions"]
+          }
+        ]
+      },
+      {
+        "name": "Investing Basics",
+        "subtopics": [
+          {
+            "name": "Difference Between Saving and Investing",
+            "content": ["Key Features of Saving Accounts vs. Investments", "Introduction to Risk and Returns"]
+          },
+          {
+            "name": "Types of Investment",
+            "content": [
+              "Overview: Stocks, Bonds, Mutual Funds, and Fixed Deposits",
+              "Understanding Compounding and Time Horizon"
+            ]
+          },
+          {
+            "name": "Diversification and Risk Management",
+            "content": [
+              "Benefits of Not Putting \"All Eggs in One Basket\"",
+              "Real-Life Examples of Diversified Portfolios"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "advanced": {
+    "topics": [
+      {
+        "name": "Advanced Investing",
+        "subtopics": [
+          {
+            "name": "Fundamental and Technical Analysis",
+            "content": [
+              "Fundamental Analysis: Reading Company Reports, Understanding Financial Ratios",
+              "Technical Analysis: Price Charts, Trends"
+            ]
+          },
+          {
+            "name": "Cryptocurrency and Blockchain",
+            "content": [
+              "Introduction to Bitcoin, Ethereum",
+              "How Blockchain Works and Its Impact on Finance",
+              "Risks and Benefits of Cryptocurrencies"
+            ]
+          },
+          {
+            "name": "Forex Trading",
+            "content": [
+              "Understanding the Foreign Exchange Market",
+              "Basics of Currency Pairs (USD/INR, EUR/USD)",
+              "Risks of Forex Trading"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tax Planning",
+        "subtopics": [
+          {
+            "name": "Basics of Taxes",
+            "content": ["Types of Taxes: Income Tax, Property Tax, GST", "Tax Deduction and Exemptions"]
+          },
+          {
+            "name": "Filing Tax Returns",
+            "content": [
+              "Step-by-Step Process for Filing Taxes (Using Local Tax Systems)",
+              "Common Mistakes in Tax Filing"
+            ]
+          },
+          {
+            "name": "Tax-Advantaged Accounts",
+            "content": ["Overview of NPS, PPF, and EPF", "How to Use These Accounts to Save Taxes"]
+          }
+        ]
+      },
+      {
+        "name": "Behavioral Finance",
+        "subtopics": [
+          {
+            "name": "Emotional Factors in Decision-Making",
+            "content": ["Overcoming Fear of Investment Loss", "Avoiding Greed and Overconfidence"]
+          },
+          {
+            "name": "Building a Healthy Financial Mindset",
+            "content": ["Importance of Patience in Long-Term Investing", "How to Stay Disciplined with Money"]
+          }
+        ]
+      },
+      {
+        "name": "Entrepreneurship and Business",
+        "subtopics": [
+          {
+            "name": "Basics of Starting a Business",
+            "content": [
+              "How to Identify a Business Idea",
+              "Writing a Simple Business Plan",
+              "Calculating Start-Up Costs"
+            ]
+          },
+          {
+            "name": "Financing a Business",
+            "content": [
+              "Sources of Capital: Loans, Crowdfunding, Venture Capital",
+              "Understanding Loan Terms for Entrepreneurs"
+            ]
+          },
+          {
+            "name": "Managing Business Finances",
+            "content": [
+              "Importance of Cash Flow Management",
+              "Keeping Financial Records and Filing Taxes for Businesses"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

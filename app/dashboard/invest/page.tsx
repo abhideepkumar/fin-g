@@ -16,7 +16,8 @@ import {
   Cell,
   ResponsiveContainer
 } from 'recharts'
-import { ArrowUpIcon, ArrowDownIcon } from 'lucide-react'
+import { ArrowUpIcon, ArrowDownIcon, Search } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 // Sample data for stock cards
 const stockCards = [
@@ -60,168 +61,185 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'
 export default function InvestmentPage() {
   const [searchTerm, setSearchTerm] = useState('')
 
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  }
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">Your Personalized Investment Dashboard</h1>
-      
-      {/* Stock Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        {stockCards.map((stock) => (
-          <Card key={stock.symbol}>
-            <CardContent className="p-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-bold">{stock.symbol}</h3>
-                  <p className="text-sm text-muted-foreground">Price: ₹{stock.price}</p>
-                </div>
-                <span className={`text-sm ${stock.change.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
-                  {stock.change}
-                </span>
+    <div className="p-6 animated-bg min-h-screen">
+      <motion.div 
+        className="max-w-7xl mx-auto"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+      >
+        <h1 className="text-4xl font-bold mb-8 gradient-text">Your Personalized Investment Dashboard</h1>
+        
+        {/* Stock Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {stockCards.map((stock, index) => (
+            <motion.div key={stock.symbol} variants={fadeIn} transition={{ delay: index * 0.1 }}>
+              <Card className="card-hover">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-bold text-lg">{stock.symbol}</h3>
+                      <p className="text-sm text-gray-600">Price: ₹{stock.price}</p>
+                    </div>
+                    <span className={`text-sm font-semibold ${stock.change.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
+                      {stock.change}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">Volume: {stock.volume}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Investment History */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl gradient-text">Investment History</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="text-gray-700">Sr. No.</TableHead>
+                    <TableHead className="text-gray-700">Share Name</TableHead>
+                    <TableHead className="text-gray-700">Price (₹)</TableHead>
+                    <TableHead className="text-gray-700">Status</TableHead>
+                    <TableHead className="text-gray-700">Date</TableHead>
+                    <TableHead className="text-gray-700">Profit/Loss (Per Share)</TableHead>
+                    <TableHead className="text-gray-700">Shares Bought</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {investmentHistory.map((item) => (
+                    <TableRow key={item.id} className={item.profitLoss >= 0 ? 'bg-green-50' : 'bg-red-50'}>
+                      <TableCell>{item.id}</TableCell>
+                      <TableCell>{item.name}</TableCell>
+                      <TableCell>{item.price}</TableCell>
+                      <TableCell>
+                        {item.status === 'up' ? (
+                          <ArrowUpIcon className="text-green-500" />
+                        ) : (
+                          <ArrowDownIcon className="text-red-500" />
+                        )}
+                      </TableCell>
+                      <TableCell>{item.date}</TableCell>
+                      <TableCell className={item.profitLoss >= 0 ? 'text-green-600' : 'text-red-600'}>
+                        {item.profitLoss}
+                      </TableCell>
+                      <TableCell>{item.sharesBought}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Charts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Stock Distribution Chart */}
+          <Card className="card-hover">
+            <CardHeader>
+              <CardTitle className="text-xl gradient-text">Stock Price Distribution</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={stockDistributionData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius={100}
+                      fill="#8884d8"
+                      dataKey="value"
+                    >
+                      {stockDistributionData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
               </div>
-              <p className="text-sm text-muted-foreground mt-2">Volume: {stock.volume}</p>
             </CardContent>
           </Card>
-        ))}
-      </div>
 
-      {/* Investment History */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>Investment History</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Sr. No.</TableHead>
-                  <TableHead>Share Name</TableHead>
-                  <TableHead>Price (₹)</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Profit/Loss (Per Share)</TableHead>
-                  <TableHead>Shares Bought</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {investmentHistory.map((item) => (
-                  <TableRow key={item.id} className={item.profitLoss >= 0 ? 'bg-green-50' : 'bg-red-50'}>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.name}</TableCell>
-                    <TableCell>{item.price}</TableCell>
-                    <TableCell>
-                      {item.status === 'up' ? (
-                        <ArrowUpIcon className="text-green-500" />
-                      ) : (
-                        <ArrowDownIcon className="text-red-500" />
-                      )}
-                    </TableCell>
-                    <TableCell>{item.date}</TableCell>
-                    <TableCell className={item.profitLoss >= 0 ? 'text-green-600' : 'text-red-600'}>
-                      {item.profitLoss}
-                    </TableCell>
-                    <TableCell>{item.sharesBought}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </CardContent>
-      </Card>
+          {/* Stock Volume Trend */}
+          <Card className="card-hover">
+            <CardHeader>
+              <CardTitle className="text-xl gradient-text">Stock Volume Trend</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={stockCards}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="symbol" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line 
+                      type="monotone" 
+                      dataKey="volume" 
+                      stroke="#8884d8" 
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-      {/* Charts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Stock Distribution Chart */}
-        <Card>
+        {/* Stock Analytics Section */}
+        <Card className="card-hover">
           <CardHeader>
-            <CardTitle>Stock Price Distribution</CardTitle>
+            <CardTitle className="text-2xl gradient-text">Stock Analytics</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="h-[300px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={stockDistributionData}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    outerRadius={100}
-                    fill="#8884d8"
-                    dataKey="value"
-                  >
-                    {stockDistributionData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Stock Volume Trend */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Stock Volume Trend</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-[300px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={stockCards}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="symbol" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line 
-                    type="monotone" 
-                    dataKey="volume" 
-                    stroke="#8884d8" 
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Stock Analytics Section */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Stock Analytics</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {stockAnalytics.map((stock) => (
-              <div key={stock.name} className="p-4 border rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="font-semibold">{stock.name}</h4>
-                    <p className="text-sm text-muted-foreground">Recommendation: {stock.recommendation}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm">Target Price: {stock.targetPrice}</p>
+            <div className="space-y-6">
+              {stockAnalytics.map((stock) => (
+                <div key={stock.name} className="p-4 border rounded-lg bg-gradient-to-r from-blue-50 to-teal-50">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="font-semibold text-lg">{stock.name}</h4>
+                      <p className="text-sm text-gray-600">Recommendation: {stock.recommendation}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Target Price: {stock.targetPrice}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold mb-2">Find the Best and Affordable Stocks to Invest!</h3>
-              <div className="relative">
-                <Input
-                  type="search"
-                  placeholder="Search stocks..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full"
-                />
+              ))}
+              <div className="mt-6">
+                <h3 className="text-xl font-semibold mb-4 gradient-text">Find the Best and Affordable Stocks to Invest!</h3>
+                <div className="relative">
+                  <Input
+                    type="search"
+                    placeholder="Search stocks..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full border-2 border-blue-300 focus:border-blue-500 rounded-full py-2 px-4 pr-10"
+                    aria-label="Search stocks"
+                  />
+                  <Search className="absolute right-3 top-2.5 text-gray-400" />
+                </div>
               </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </motion.div>
     </div>
   )
 }
